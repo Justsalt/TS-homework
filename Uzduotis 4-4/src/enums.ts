@@ -1,6 +1,9 @@
+/* eslint-disable no-console */
+/* eslint-disable no-lone-blocks */
+
 /*
   Enum(išvardinimas) - tai konstantų rinkinys.
-  Enum(išvardinimai) yra naudojami įvardinti tipams ar nustatymams. 
+  Enum(išvardinimai) yra naudojami įvardinti tipams ar nustatymams.
   Jų reikšmės dažniau naudojamos tipo patikrinimams, nei atvazdavimui.
 */
 
@@ -14,13 +17,13 @@ enum WeekDays {
   Friday, // 5
   Saturday, // 6
   Sunday, // 7
-};
+}
 
 // Jei nenurodote pirmosios reikšmės, numeruojama nuo 0
 enum Answer {
   No, // 0
   Yes, // 1
-};
+}
 
 // Jei išvardinamų konstantų tipas yra ne skaičius, privalote įvardinti kiekvieną narį
 enum WeekDayNamesLT {
@@ -31,33 +34,66 @@ enum WeekDayNamesLT {
   Friday = 'penktadienis',
   Saturday = 'šeštadienis',
   Sunday = 'sekmadienis',
-};
+}
 
 // Alikite užduotis, ir atspausdinkite savo sprendimo pavyzdžius užduoties blokuose
 console.group('Literal types - užduotys');
 {
   // ↓↓↓↓ Tipus ir užduotims bendrus kintamuosius aprašykite čia ↓↓↓↓
+  enum largeCities{
+    Vinius = 'Vilnius',
+    Kaunas='Kaunas',
+    Klaipeda='Klaipeda',
+    Siauliai='Siauliai',
+    Panevezys='Panevezys'
+
+  }
+  enum HumanPopuliation {
+    Honduras= 9904607,
+    'United Arab Emirates'=9890402,
+    Djibouti=988000,
+    'Saint Barthelemy'=9877,
+    Seychelles=98347
+
+  }
+  enum Bvp{
+    Liuksemburgas= 10,
+    Sveicarija,
+    Makao,
+    Norvegija,
+    Airija
+
+  }
 
   // ↑↑↑↑ Tipus ir užduotims bendrus kintamuosius aprašykite čia ↑↑↑↑
 
-  console.group("1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.");
+  console.group('1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.');
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+   const cityOne:largeCities=largeCities.Klaipeda
+   console.log(cityOne)
+
+
   }
   console.groupEnd();
 
   console.group('2. Sukurkite 5 šalių su didžiausiu gyventojų skaičiumi skaitinį išvardinimą.');
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+const cityTwo:HumanPopuliation[]=[HumanPopuliation.Honduras,HumanPopuliation.Seychelles] 
+console.log(cityTwo)
   }
   console.groupEnd();
 
   console.group('3. Sukurkite 5 šalių su didžiausiu BVP skaitinį išvardinimą pradedant "1".');
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+    const cityThree:Bvp[]=[
+      Bvp.Airija,
+      Bvp.Liuksemburgas,
+      Bvp.Makao,
+      Bvp.Norvegija,
+      Bvp.Sveicarija
+    ]
+    console.log(cityThree)
   }
   console.groupEnd();
-
 }
 console.groupEnd();
-

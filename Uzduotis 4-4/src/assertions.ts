@@ -27,13 +27,14 @@ console.group('Assertions - užduotys');
   const buttonSubmit : HTMLInputElement = document.querySelector('#button-submit') as HTMLInputElement;
   const textOutput : HTMLElement = document.querySelector('#text-output') as HTMLElement;
   const smallSquare : HTMLElement = document.querySelector('#smallSquare') as HTMLElement;
+
   // ↑↑↑↑ Tipus ir užduotims bendrus kintamuosius apraškite čia ↑↑↑↑
 
   console.group('1. Sukurkite HTML mygtuką ir uždėkite jam įvykio klausiklį, jog paspaudus, būt spausdinamas tekstas "paspausta!"');
   {
     buttonSubmit.addEventListener('click', (e) => {
       e.preventDefault();
-      textOutput.textContent += 'paspausta! ';
+      textOutput.textContent = 'paspausta! ';
     });
   }
   console.groupEnd();
@@ -44,7 +45,6 @@ console.group('Assertions - užduotys');
       e.preventDefault();
 
       const divSquare = document.createElement('div');
-
       divSquare.style.height = '100px';
       divSquare.style.width = '100px';
       divSquare.style.margin = '5px';
@@ -57,7 +57,15 @@ console.group('Assertions - užduotys');
 
   console.group('3. Sukurkite <p> elementą kuriame spausdinsite skaičių - kiek kvadratėlių yra [2.] konteineryje');
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia
+    const divSquareCounter = document.createElement('div');
+
+    let startNumber:number = 0;
+
+    function addToNumber():void {
+      divSquareCounter.innerHTML = `the current numer ${1 + startNumber++}`;
+    }
+    buttonSubmit.onclick = addToNumber;
+    smallSquare.prepend(divSquareCounter);
   }
   console.groupEnd();
 }

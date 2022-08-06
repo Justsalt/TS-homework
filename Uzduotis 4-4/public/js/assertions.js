@@ -15,7 +15,7 @@ console.group('Assertions - užduotys');
     {
         buttonSubmit.addEventListener('click', (e) => {
             e.preventDefault();
-            textOutput.textContent += 'paspausta! ';
+            textOutput.textContent = 'paspausta! ';
         });
     }
     console.groupEnd();
@@ -34,6 +34,13 @@ console.group('Assertions - užduotys');
     console.groupEnd();
     console.group('3. Sukurkite <p> elementą kuriame spausdinsite skaičių - kiek kvadratėlių yra [2.] konteineryje');
     {
+        const divSquareCounter = document.createElement('div');
+        let startNumber = 0;
+        function addToNumber() {
+            divSquareCounter.innerHTML = `the current numer ${1 + startNumber++}`;
+        }
+        buttonSubmit.onclick = addToNumber;
+        smallSquare.prepend(divSquareCounter);
     }
     console.groupEnd();
 }
