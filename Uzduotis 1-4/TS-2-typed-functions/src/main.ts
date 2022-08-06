@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
+/* eslint-disable no-lone-blocks */
 /*
   Funkcijos aprašomos tokiu būdu:
     * apibūdinami(aprašomi tipais) visi funkcijos parametrai
@@ -5,26 +8,22 @@
 */
 
 // Funkcija aprašoma deklaruojant
-const addNumbers = (num1: number, num2: number): number => {
-  return num1 + num2;
-};
+const addNumbers = (num1: number, num2: number): number => num1 + num2;
 
 // Funkcijos tipas aprašytas prieš funkcijos deklaravimą
-/*
-  Aprašius funkciją tipu nebereikia įvardinti tipų deklaruojant funkciją.
-  funkcijų tipai yra deklaruojami atskirai, kuomet:
-    * norima funkcijos tipą pritaikyti ne vienai funkcijai
-    * funkcijos parametrų ar grąžinimo tipas yra sudėtingi
-*/
-type binaryStringBuilder = (str1: string, str2: string) => string;
+  /*
+    Aprašius funkciją tipu nebereikia įvardinti tipų deklaruojant funkciją.
+    funkcijų tipai yra deklaruojami atskirai, kuomet:
+      * norima funkcijos tipą pritaikyti ne vienai funkcijai
+      * funkcijos parametrų ar grąžinimo tipas yra sudėtingi
+  */
+  type binaryStringBuilder = (str1: string, str2: string) => string;
 
-const joinStrings: binaryStringBuilder = (str1, str2) => {
-  return str1 + ' ' + str2;
-};
+const joinStrings: binaryStringBuilder = (str1, str2) => `${str1} ${str2}`;
 
 const createInitials: binaryStringBuilder = function (str1, str2) {
   return str1[0].toLocaleUpperCase() + str2[0].toLocaleUpperCase();
-}
+};
 
 const sum: number = addNumbers(5, 7);
 const joinedString: string = joinStrings('Penediktas', 'Tušinis');
@@ -37,9 +36,9 @@ console.log({
 });
 
 /*
-  Kuomet funkcijos nieko negrąžina, turime nurodyti tipą
-    * void - funkcijos grąžinimo tipas nebus reikalaujamas
-*/
+    Kuomet funkcijos nieko negrąžina, turime nurodyti tipą
+      * void - funkcijos grąžinimo tipas nebus reikalaujamas
+  */
 
 function printRedText(text: string): void {
   console.log(`%c ${text}`, 'color: #ee0000');
@@ -49,25 +48,23 @@ printRedText('printRed funkcijos argumentas');
 
 console.group('1. Aprašykite funkcijoms tipus jas deklaruojant');
 {
-  const multiply = (a, b) => {
-    return a * b;
+  const multiply = (a:number, b:number):number => a * b;
+
+  const power = function (base:number, powerx:number) {
+    return base ** powerx;
   };
 
-  const power = function (base, power) {
-    return base ** power;
-  };
+  const squareRoot = (number:number) => number ** (1 / 2);
 
-  const squareRoot = (number) => number ** (1 / 2);
-
-  const root = function (base, nthRoot) {
+  const root = function (base:number, nthRoot:number) {
     return base ** (1 / nthRoot);
-  }
+  };
 
-  const printBlueText = (text) => console.log(`%c${text}`, 'color: #0000ee');
+  const printBlueText = (text:string) => console.log(`%c${text}`, 'color: #0000ee');
 
   const num1: number = 16;
   const num2: number = 4;
-  
+
   console.log({
     [`multiply(${num1}, ${num2})`]: multiply(num1, num2),
     [`power(${num1}, ${num2})`]: power(num1, num2),
@@ -78,35 +75,34 @@ console.group('1. Aprašykite funkcijoms tipus jas deklaruojant');
 }
 console.groupEnd();
 
-
-
 console.group('2. Aprašykite funkcijų tipus prieš deklaruojant funkcijas');
 {
-  const multiply = (a, b) => {
-    return a * b;
-  };
+type Multiply=(num1:number, num2:number) => number
+type SquareRoot =(num1:number)=> number
 
-  const power = function (base, power) {
-    return base ** power;
-  };
+const multiply:Multiply = (a, b) => a * b;
 
-  const squareRoot = (number) => number ** (1 / 2);
+const power:Multiply = function (base, powers) {
+  return base ** powers;
+};
 
-  const root = function (base, nthRoot) {
-    return base ** (1 / nthRoot);
-  }
+const squareRoot:SquareRoot = (number) => number ** (1 / 2);
 
-  const printBlueText = (text) => console.log(`%c${text}`, 'color: #0000ee');
+const root:Multiply = function (base, nthRoot) {
+  return base ** (1 / nthRoot);
+};
 
-  const num1: number = 16;
-  const num2: number = 4;
+const printBlueText = (text:string) => console.log(`%c${text}`, 'color: #0000ee');
 
-  console.log({
-    [`multiply(${num1}, ${num2})`]: multiply(num1, num2),
-    [`power(${num1}, ${num2})`]: power(num1, num2),
-    [`squareRoot(${num1})`]: squareRoot(num1),
-    [`root(${num1}, ${num2})`]: root(num1, num2),
-  });
-  printBlueText('printBlueText funkcijos argumentas');
+const num1: number = 16;
+const num2: number = 4;
+
+console.log({
+  [`multiply(${num1}, ${num2})`]: multiply(num1, num2),
+  [`power(${num1}, ${num2})`]: power(num1, num2),
+  [`squareRoot(${num1})`]: squareRoot(num1),
+  [`root(${num1}, ${num2})`]: root(num1, num2),
+});
+printBlueText('printBlueText funkcijos argumentas');
 }
 console.groupEnd();
