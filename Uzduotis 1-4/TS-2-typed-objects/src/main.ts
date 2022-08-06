@@ -1,15 +1,17 @@
+/* eslint-disable no-lone-blocks */
+/* eslint-disable no-console */
 /*
   Objektų tipai aprašomi aprašant kiekvieną savybę atskirai. Jeigu savybė nėra privaloma, prie savybės pavadinimo rašome klaustuką
 */
 
 type Person = {
-  id: string,
-  name: string,
-  surname: string,
-  age: number,
-  height?: number, // Neprivaloma sabybė
-  weight?: number, // Neprivaloma sabybė
-};
+    id: string,
+    name: string,
+    surname: string,
+    age: number,
+    height?: number, // Neprivaloma sabybė
+    weight?: number, // Neprivaloma sabybė
+  };
 
 // Minimaliai aprašytas Person tipo objektas
 const person1: Person = {
@@ -36,10 +38,11 @@ const person3: Person = {
   age: 11,
   height: 1.45,
   weight: 45,
-}
+};
 
-// Tipo panaudojimas aprašant funkcijas
-type CreateFullname = (person: Person) => string;
+  // Tipo panaudojimas aprašant funkcijas
+  type CreateFullname = (person: Person) => string;
+
 const createFullname: CreateFullname = ({ name, surname }) => `${name} ${surname}`;
 
 const printCouple = (p1: Person, p2: Person): void => {
@@ -53,8 +56,8 @@ printCouple(person1, person2);
 // Atlikite užduotis, funkcijas aprašydami tipais
 console.group('1. Sukurkite funkciją kuri patikrina ar žmogus yra pilnametis');
 {
-  const isAdult = () => {};
-  
+  const isAdult = (person:Person):boolean => person.age >= 18;
+
   console.log({
     [createFullname(person1)]: isAdult(person1),
     [createFullname(person2)]: isAdult(person2),
@@ -65,8 +68,11 @@ console.groupEnd();
 
 console.group('2. Sukurkite funkciją, kuri patikrina ar Person tipo objektas turi ūgį ir svorį');
 {
-  const isFullyDescribedPerson = () => {};
-  
+  const isFullyDescribedPerson = (person:Person){
+     return Boolean(person.weight && person.height)};// mano variantas
+  // type IsFullyDescribedPerson =(p:Person)=> boolean
+  // const isFullyDescribedPerson:IsFullyDescribedPerson = (person)=> Boolean(person.height)&& Boolean(person.weight)
+
   console.log({
     [createFullname(person1)]: isFullyDescribedPerson(person1),
     [createFullname(person2)]: isFullyDescribedPerson(person2),
@@ -77,8 +83,8 @@ console.groupEnd();
 
 console.group('3. Sukurkite funkciją, kuri grąžina žmogaus incialus');
 {
-  const createInitials = () => {};
-  
+  const createInitials = (person:Person):string => `${person.name[0]} ${person.surname[0]}`;
+
   console.log({
     [createFullname(person1)]: createInitials(person1),
     [createFullname(person2)]: createInitials(person2),
@@ -86,4 +92,3 @@ console.group('3. Sukurkite funkciją, kuri grąžina žmogaus incialus');
   });
 }
 console.groupEnd();
-
