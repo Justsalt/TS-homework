@@ -16,8 +16,7 @@ console.groupEnd();
 
 console.groupCollapsed('2 - https://edabit.com/challenge/9KEKJG5PZTFmG3Zau');
 {
-  Test.assertSimilar(addName({}, 'Brutus', 300), { Brutus: 300 });
-  Test.assertSimilar(addName({ piano: 500 }, 'Brutus', 400), { piano: 500, Brutus: 400 });
-  Test.assertSimilar(addName({ piano: 500, stereo: 300 }, 'Caligula', 440), { piano: 500, stereo: 300, Caligula: 440 });
+
+  // return {...obj, [name]: value}
 }
 console.groupEnd();
