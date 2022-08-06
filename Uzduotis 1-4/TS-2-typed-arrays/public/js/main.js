@@ -71,10 +71,23 @@ console.group('Užduotys');
     console.groupEnd();
     console.group('2. Sukurkite ir tipais aprašykite funkciją, kuri sudarytų string\'ą iš string\'ų masyvo elementų pirmųjų raidžių');
     {
+        const dataInfo = [
+            ['Lietuviškas', 'Nepriklausomas', 'Kanalas'],
+            ['Lietuvos', 'Respublikos', 'Televizija'],
+            ['Loughing', 'Out', 'Loud'],
+        ];
+        const reducer = (p, c) => p + c[0];
+        dataInfo.forEach(s => console.log(s.reduce(reducer, '')));
     }
     console.groupEnd();
     console.group('3. Sukurkite ir tipais aprašykite funkciją, kuri saudaugintų visus number masyvo skaičius');
     {
+        const numbersCount = [
+            [1, 7, 8],
+            [98, 74, 5, 0],
+            [17, 10, 5]
+        ];
+        numbersCount.forEach(n => console.log(n.reduce((p, c) => p * c, 1)));
     }
     console.groupEnd();
 }
