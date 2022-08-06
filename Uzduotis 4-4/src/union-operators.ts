@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-lone-blocks */
 /*
   Union operator (Apjungimo operatorius) yra skirtas aprašytis tipus, kurie apjungia kelis kitus tipus
 */
@@ -40,7 +42,7 @@ const call: Call = (callee) => {
   } else {
     console.log('Skambinama:', callee.mobile);
   }
-}
+};
 
 // Union panaudojimas aprašant masyvus
 
@@ -57,27 +59,87 @@ const flags2: FlagOptions = [true, false, false, true, true];
 console.group('Union operators - užduotys');
 {
   // ↓↓↓↓ Tipus apraškite čia ↓↓↓↓
+type Accommodation=string | number
 
-  // ↑↑↑↑ Tipus apraškite čia ↑↑↑↑
+type AccmmodationObj={
+  namas:string,
+  aukstas:number,
+  spalva:string |number,
+  tipas:'house'| 'flat'
 
-  console.group('1. Aprašykite objekto tipą Accommodation, kurio savybė "type" būtų, "House" arba "Flat"');
-  {
-    // sprendimo pavyzdžius spausdinkite čia 
-  }
-  console.groupEnd();
+}
+type Car = {
+  transmission: 'Automatic' | 'Manual',
+  carColor: 'red' | 'bluee'| 'black'
 
-  console.group('2. Aprašykite objekto tipą Car, kurio savybė "transmission" būtų, "Automatic" arba "Manual"');
-  {
-    // sprendimo pavyzdžius spausdinkite čia 
-  }
-  console.groupEnd();
+}
 
-  console.group('3. Aprašykite tipą, kuris kintamajam leistų būti: arba Accommodation masyvu, arba Car masyvu');
-  {
-    // sprendimo pavyzdžius spausdinkite čia 
-  }
-  console.groupEnd();
+// ↑↑↑↑ Tipus apraškite čia ↑↑↑↑
 
+console.group('1. Aprašykite objekto tipą Accommodation, kurio savybė "type" būtų, "House" arba "Flat"');
+{
+  const accmmodation:Accommodation = 'namas';
+  console.log(accmmodation);
+
+  const houseOne:AccmmodationObj = {
+    namas: 'grazus',
+    aukstas: 20,
+    spalva: 222,
+    tipas: 'flat',
+  };
+  console.log(houseOne);
 }
 console.groupEnd();
 
+console.group('2. Aprašykite objekto tipą Car, kurio savybė "transmission" būtų, "Automatic" arba "Manual"');
+{
+  const carObj:Car = {
+    transmission: 'Manual',
+    carColor: 'bluee',
+  };
+  console.log(carObj);
+}
+console.groupEnd();
+
+console.group('3. Aprašykite tipą, kuris kintamajam leistų būti: arba Accommodation masyvu, arba Car masyvu');
+{
+  type carHouseWrapperObj= Car | AccmmodationObj
+
+  const houseAndCar:carHouseWrapperObj = {
+    transmission: 'Automatic',
+    tipas: 'flat',
+    carColor: 'red',
+  };
+  console.log(houseAndCar);
+}
+console.groupEnd();
+}
+console.groupEnd();
+
+/// test////
+// type moreTypes = Array<(1 | 9| string)> |number
+// const kazkas:moreTypes = [1, 9, 'labas', 1, 9, 'ate', 'ate'];
+// console.log(kazkas);
+
+// type Calls = (callees: User | string) => void;
+
+// const calls: Calls = (callees) => {
+//   if (typeof callees === 'string') {
+//     console.log('Skambinama:', callees);
+//   } else {
+//     console.log('Skambinama:', callees.mobile);
+//   }
+// };
+// call('labas');
+
+// type skambinu=(n1: string) => void
+
+// const funkcija:skambinu = (iskvietimas) => {
+//   if (typeof iskvietimas === 'string') {
+//     console.log(iskvietimas, ', teisingas');
+//   } else {
+//     console.log(iskvietimas, ',neteisingas');
+//   }
+// };
+
+// funkcija(true);
