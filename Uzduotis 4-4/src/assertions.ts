@@ -63,8 +63,8 @@ console.group('Assertions - užduotys');
 
     function addToNumber():void {
       divSquareCounter.innerHTML = `the current numer ${1 + startNumber++}`;
+      buttonSubmit.onclick = addToNumber;
     }
-    buttonSubmit.onclick = addToNumber;
     smallSquare.prepend(divSquareCounter);
   }
   console.groupEnd();

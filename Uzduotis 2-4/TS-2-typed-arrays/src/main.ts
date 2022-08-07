@@ -3,6 +3,8 @@
     * tipas[] -> number[], string[], Person[] ir t.t.
     * Array<tipas> -> Array<number>, Array<string>, Array<Person> ir t.t.
 */
+
+
  
 type Person = {
     id: string,
