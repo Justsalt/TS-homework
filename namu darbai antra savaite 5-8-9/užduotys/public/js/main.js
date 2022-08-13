@@ -78,7 +78,7 @@ console.groupCollapsed('3. Atspausdinkite objektus su visų žmonių vardais, pa
 {
     const personIdent = ({ name, surname, married }) => ({ name, surname, married });
     const identitiesd = people.map(personIdent);
-    console.log(identitiesd);
+    console.table(identitiesd);
 }
 console.groupEnd();
 console.groupCollapsed('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą');

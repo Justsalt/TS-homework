@@ -126,7 +126,7 @@ type personOne = {
 const personIdent = ({ name, surname, married }:Person):personOne => ({ name, surname, married });
 
 const identitiesd:personOne[] = people.map(personIdent);
-console.log(identitiesd);
+console.table(identitiesd);
 }
 console.groupEnd();
 
@@ -282,8 +282,10 @@ console.groupEnd();
 
     // const britishPeople: ChangeKey[] = people.map(salaryConvert);
 
-// console.table(people);
-// console.table(britishPeople);
+    // console.table(people);
+    // console.table(britishPeople);
+
+// sita nusirasiau, reikia ismokti
 type PersonBritish = Omit<Person, 'income'> & {
   salary?: Person['income']
 };
