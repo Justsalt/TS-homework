@@ -1,5 +1,5 @@
-import Vehicle, { VehicleTypes } from './Vehicle.js';
 
+import Vehicle,{VehicleTypes} from "./Vehicle.js"
 class WaterVehicle extends Vehicle {
   private maxDepth:number;
 

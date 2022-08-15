@@ -17,7 +17,9 @@
 // Išskaidykite kodą atskirais failais
 
 // const waterVehicleOne = new WaterVehicle(200, 'bmw', 'audi', 200);
-
+import WaterVehicle from "./waterVehicle.js";
+import AirVehicle from "./airVehicle.js";
+import LandVehicle from "./landVehicle.js";
 
 
 const waterVehicleOne = new WaterVehicle(
@@ -27,7 +29,7 @@ const waterVehicleOne = new WaterVehicle(
     model: 'audi',
     year: 200,
   },
-);
+)
 
 console.log(waterVehicleOne);
 console.log(waterVehicleOne.getString());

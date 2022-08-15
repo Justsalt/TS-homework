@@ -1,4 +1,4 @@
-export default class Vehicle {
+export class Vehicle {
     brand;
     model;
     year;
@@ -11,4 +11,5 @@ export default class Vehicle {
         return `this ${this.brand} are ${this.model} old ${this.year}`;
     }
 }
+export default Vehicle;
 //# sourceMappingURL=Vehicle.js.map

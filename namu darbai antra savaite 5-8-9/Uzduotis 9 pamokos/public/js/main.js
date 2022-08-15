@@ -1,4 +1,6 @@
-"use strict";
+import WaterVehicle from "./waterVehicle.js";
+import AirVehicle from "./airVehicle.js";
+import LandVehicle from "./landVehicle.js";
 const waterVehicleOne = new WaterVehicle(200, {
     brand: 'bmw',
     model: 'audi',

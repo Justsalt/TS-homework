@@ -1,4 +1,4 @@
-"use strict";
+import Vehicle from "./Vehicle.js";
 class AirVehicle extends Vehicle {
     maxAltitude;
     constructor(maxAltitude, vehicleTypes) {
@@ -9,4 +9,5 @@ class AirVehicle extends Vehicle {
         return `${super.getString()} altitude :  ${this.maxAltitude}`;
     }
 }
+export default AirVehicle;
 //# sourceMappingURL=airVehicle.js.map

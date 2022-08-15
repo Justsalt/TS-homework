@@ -4,7 +4,7 @@ export type VehicleTypes={
 // type WaterVehicleProps = {
 //     maxDepth: number
 //   }
-export default class Vehicle {
+export class Vehicle {
   protected brand:string;
 
   protected model:string;
@@ -21,3 +21,4 @@ export default class Vehicle {
     return `this ${this.brand} are ${this.model} old ${this.year}`;
   }
 }
+export default Vehicle

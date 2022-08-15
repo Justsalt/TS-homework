@@ -1,4 +1,5 @@
-class LandVehicle extends Vehicle {
+ import Vehicle,{VehicleTypes} from "./Vehicle.js"
+ class LandVehicle extends Vehicle {
   private tires: string[];
 
   constructor(tires:string[], vehicleTypes:VehicleTypes) {
@@ -10,3 +11,4 @@ class LandVehicle extends Vehicle {
     return `${super.getString()} tyres : ${this.tires}`;
   }
 }
+export default LandVehicle

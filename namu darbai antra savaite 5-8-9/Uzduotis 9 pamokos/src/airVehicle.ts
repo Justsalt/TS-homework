@@ -1,3 +1,7 @@
+
+import Vehicle,{VehicleTypes} from "./Vehicle.js"
+
+
 class AirVehicle extends Vehicle {
   private maxAltitude: number;
 
@@ -10,3 +14,4 @@ class AirVehicle extends Vehicle {
     return `${super.getString()} altitude :  ${this.maxAltitude}`;
   }
 }
+export default AirVehicle

@@ -1,4 +1,4 @@
-import Vehicle from './Vehicle.js';
+import Vehicle from "./Vehicle.js";
 class WaterVehicle extends Vehicle {
     maxDepth;
     constructor(maxDepth, vehicleTypes) {
