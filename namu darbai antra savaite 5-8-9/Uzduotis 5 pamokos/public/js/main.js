@@ -145,15 +145,14 @@ console.groupCollapsed('8. Atspausdinkite žmonių vardus ir pavardes, kurie tur
     }
     console.groupCollapsed('11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary"');
     {
-        const convertToBritish = ({ income, ...person }) => {
-            const result = { ...person };
+        const personSalaryFunkction = ({ income, ...res }) => {
+            const result = { ...res };
             if (income)
                 result.salary = income;
             return result;
         };
-        const britishPeople = people.map(convertToBritish);
-        console.table(people);
-        console.table(britishPeople);
+        const res = people.map(personSalaryFunkction);
+        console.table(res);
     }
     console.groupEnd();
     console.groupCollapsed('12. Suformuokite žmonių masyvą, kuriame nebūtų lyties, vardo ir pavardės');

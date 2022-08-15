@@ -269,38 +269,18 @@ console.groupEnd();
   }
   console.groupCollapsed('11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary"');
   {
-    // type ChangeKey= Omit<Person,'income'>&{
-    //   salary:Person['income']
-    // }
-    // const salaryConvert=({income, ...person}:Person)=>{
-    //   const result: ChangeKey = { ...person };
+    type PersonIncomToSalary = Omit<Person, 'income'> & {
+      salary?:Person['income']
+    };
 
-    //   if (income) result.salary = income;
+    const personSalaryFunkction = ({ income, ...res }:Person):PersonIncomToSalary => {
+      const result:PersonIncomToSalary = { ...res };
 
-    //   return result;
-    // }
-
-    // const britishPeople: ChangeKey[] = people.map(salaryConvert);
-
-    // console.table(people);
-    // console.table(britishPeople);
-
-// sita nusirasiau, reikia ismokti
-type PersonBritish = Omit<Person, 'income'> & {
-  salary?: Person['income']
-};
-
-const convertToBritish = ({ income, ...person }: Person): PersonBritish => {
-  const result: PersonBritish = { ...person };
-
-  if (income) result.salary = income;
-
-  return result;
-};
-
-const britishPeople: PersonBritish[] = people.map(convertToBritish);
-console.table(people);
-console.table(britishPeople);
+      if (income) result.salary = income;
+      return result;
+    };
+    const res: PersonIncomToSalary[] = people.map(personSalaryFunkction);
+    console.table(res);
   }
   console.groupEnd();
 

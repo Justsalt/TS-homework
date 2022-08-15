@@ -122,15 +122,15 @@ class Person {
   }
 
   public toString() {
-    let formattedPerson = `${this.name} ${this.surname}\n`;
-    formattedPerson += `\theight: ${this.getHeight()} ${Person.heightUnits}\n`;
-    formattedPerson += `\tweight: ${this.getWeight()}   ${Person.weightUnits}\n`;
+    let nameAndSurname = `${this.name} ${this.surname}\n`;
+    nameAndSurname += `\theight: ${this.getHeight()} ${Person.heightUnits}\n`;
+    nameAndSurname += `\tweight: ${this.getWeight()}   ${Person.weightUnits}\n`;
 
-    return formattedPerson;
+    return nameAndSurname;
   }
 }
 const people:Person[] = [
-  new Person('seSbentautas', 'bordiuras', 40, 190, undefined, 200, weightUnits.POUND),
+  new Person('Maliska', 'bordiuras', 40, 190, undefined, 200, weightUnits.POUND),
   new Person('justas', 'sabalSauskas', 15, 1.7, HeightUnit.METERS, 300, weightUnits.POUND),
   new Person('Akvile adams', 'linauskaite', 12, 72, HeightUnit.INCHES, 400, weightUnits.POUND),
 ];
