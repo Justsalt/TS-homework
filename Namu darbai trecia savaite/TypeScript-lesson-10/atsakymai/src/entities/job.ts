@@ -17,7 +17,6 @@ class Job {
   ) {
     Job.instanceCount += 1;
     this.id = `Job-${Job.instanceCount}`;
-
     this.finished = false;
     this.payed = false;
   }
