@@ -1,4 +1,3 @@
-## REALIAI TAI BEVEIK VISKA NUSIRASIAU, NES MANO NESIGAVO TAIP KAIP TUREJO
 # TypeScript - CRUD užduotis 1
 
 ## Užduoties tikslas
